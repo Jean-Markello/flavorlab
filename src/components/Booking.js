@@ -14,7 +14,11 @@ const Booking = () => {
   const [state, setValue] = useState("");
   const [price, setPrice] = useState("");
   const serviceType = [
-    ["Service Type", ["One Session", "In-person Cooking", "Online Cooking"], "state1"],
+    [
+      "Service Type",
+      ["One Session", "In-person Cooking", "Online Cooking"],
+      "state1",
+    ],
     [
       "Instructor",
       [
@@ -28,7 +32,7 @@ const Booking = () => {
         "Olivia Reynolds",
         "Lisa Campbell",
       ],
-      "state2"
+      "state2",
     ],
   ];
 
@@ -68,7 +72,11 @@ const Booking = () => {
               >
                 <Card.Body>
                   {requireDetails.map((details) => (
-                    <InputGroup className="mb-3" style={{ marginTop: "5%" }} key={details}>
+                    <InputGroup
+                      className="mb-3"
+                      style={{ marginTop: "5%" }}
+                      key={details}
+                    >
                       <InputGroup.Text id="basic-addon1">
                         {details}
                       </InputGroup.Text>
@@ -80,19 +88,30 @@ const Booking = () => {
                     </InputGroup>
                   ))}
                   {serviceType.map((service) => (
-                    <InputGroup className="mb-3" style={{ marginTop: "5%" }} key={service[0]}>
+                    <InputGroup
+                      className="mb-3"
+                      style={{ marginTop: "5%" }}
+                      key={service[0]}
+                    >
                       <SplitButton
                         variant="outline-secondary"
                         title={service[0]}
                         id="segmented-button-dropdown-1"
                       >
                         {service[1].map((item) => (
-                          <Dropdown.Item href="#" onClick={() => changeValue(item, service[3])} key={item}>
+                          <Dropdown.Item
+                            href="#"
+                            onClick={() => changeValue(item, service[3])}
+                            key={item}
+                          >
                             {item}
                           </Dropdown.Item>
                         ))}
                       </SplitButton>
-                      <Form.Control placeholder={state} aria-label="Text input with dropdown button" />
+                      <Form.Control
+                        placeholder={state}
+                        aria-label="Text input with dropdown button"
+                      />
                     </InputGroup>
                   ))}
                   <Card.Text>
@@ -104,8 +123,7 @@ const Booking = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <
-            Col></Col>
+            <Col></Col>
           </Row>
         </div>
       </div>
