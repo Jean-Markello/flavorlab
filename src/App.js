@@ -14,22 +14,22 @@ function App() {
       <div className="App">
         <div className="content">
           <Switch>
-            <Route exact path="/MealCooked/" element={<Home/>}>
+            <Route exact path="/flavorlab/" element={<Home/>}>
               <Home />
             </Route>
-            <Route path="/MealCooked/meals">
+            <Route path="/flavorlab/meals">
               <Meals />
             </Route>
-            <Route path="/MealCooked/about">
+            <Route path="/flavorlab/about">
               <About />
             </Route>
-            <Route path="/MealCooked/instructors">
+            <Route path="/flavorlab/instructors">
               <Instructors/>
             </Route>
-            <Route path="/MealCooked/services">
+            <Route path="/flavorlab/services">
               <Services/>
             </Route>
-            <Route path="/MealCooked/booking">
+            <Route path="/flavorlab/booking">
               <Booking/>
             </Route>
           </Switch>

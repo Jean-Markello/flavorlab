@@ -38,20 +38,27 @@ const Booking = () => {
   const serviceAllType = [serviceType, serviceType2];
 
   const [selectedService, setSelectedService] = useState("Service Type");
+  const [selectedInstructor, setSelectedInstructor] = useState("Instructor");
   const [price, setPrice] = useState("");
+  
+  let servicess = {
+    "Instructor": selectedInstructor,
+    "Service Type": selectedService
+  }
 
-  const handleServiceSelect = (event) => {
-    const selectedValue = event.target.value;
-    setSelectedService(selectedValue);
+  const handleServiceSelect = (event, type) => {
+      const selectedValue = event.target.value;
+      type === "Instructor"? setSelectedInstructor(selectedValue): setSelectedService(selectedValue);
 
-    // Calculate and set the price based on the selected service
-    if (selectedValue === "One Session") {
-      setPrice("$50 for 2H");
-    } else if (selectedValue === "In-person Cooking") {
-      setPrice("$400 for 5 Month");
-    } else if (selectedValue === "Online Cooking") {
-      setPrice("$200 for 2 Month");
-    }
+      // Calculate and set the price based on the selected service
+      if (selectedValue === "One Session") {
+        setPrice("$50 for 2H");
+      } else if (selectedValue === "In-person Cooking") {
+        setPrice("$400 for 5 Month");
+      } else if (selectedValue === "Online Cooking") {
+        setPrice("$200 for 2 Month");
+      }
+    
   };
 
   const handleBookClick = () => {
@@ -94,8 +101,8 @@ const Booking = () => {
                       <FloatingLabel controlId="floatingSelectGrid" style={{ marginBottom: "4%" }} className="mb-2">
                         <Form.Select
                           aria-label="Floating label select example"
-                          onChange={handleServiceSelect}
-                          value={selectedService}
+                          onChange={ (event) => handleServiceSelect(event, serviceType[0][0])}
+                          value={servicess[serviceType[0][0]]}
                         >
                           {serviceType.map((service) => (
                             <optgroup>

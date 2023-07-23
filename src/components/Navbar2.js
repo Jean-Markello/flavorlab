@@ -34,7 +34,7 @@ const Navbar2 = () => {
           <Container>
             <Navbar.Brand>
               <Link
-                to="/MealCooked"
+                to="/flavorlab"
                 style={{ color: "rgba(212, 109, 7, 0.885)" }}
               >
                 {t('home')}
@@ -42,7 +42,7 @@ const Navbar2 = () => {
             </Navbar.Brand>
             <Navbar.Brand>
               <Link
-                to="/MealCooked/services"
+                to="/flavorlab/services"
                 style={{ color: "rgba(212, 109, 7, 0.885)" }}
               >
                 {" "}
@@ -57,7 +57,7 @@ const Navbar2 = () => {
             </Navbar.Brand>
             <Navbar.Brand>
               <Link
-                to="/MealCooked/instructors"
+                to="/flavorlab/instructors"
                 style={{ color: "rgba(212, 109, 7, 0.885)" }}
               >
                 {" "}
@@ -66,7 +66,7 @@ const Navbar2 = () => {
             </Navbar.Brand>
             <Navbar.Brand>
               <Link
-                to="/MealCooked/meals"
+                to="/flavorlab/meals"
                 style={{ color: "rgba(212, 109, 7, 0.885)" }}
               >
                 {" "}
@@ -75,7 +75,7 @@ const Navbar2 = () => {
             </Navbar.Brand>
             <Navbar.Brand>
               <Link
-                to="/MealCooked/booking"
+                to="/flavorlab/booking"
                 style={{ color: "rgba(212, 109, 7, 0.885)" }}
               >
                 {" "}
