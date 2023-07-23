@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/flavorlab/static/css/main.4f38b2c0.css",
-    "main.js": "/flavorlab/static/js/main.40356e2a.js",
+    "main.js": "/flavorlab/static/js/main.e43d7911.js",
     "static/media/stir-fry.jpg": "/flavorlab/static/media/stir-fry.7e92ec210dd029c92628.jpg",
     "static/media/tacos.jpg": "/flavorlab/static/media/tacos.9342710e8f45f73dca00.jpg",
     "static/media/chef6.png": "/flavorlab/static/media/chef6.1ac9f765b1e4f33c75ab.png",
@@ -39,10 +39,10 @@
     "index.html": "/flavorlab/index.html",
     "static/media/getFetch.cjs": "/flavorlab/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.4f38b2c0.css.map": "/flavorlab/static/css/main.4f38b2c0.css.map",
-    "main.40356e2a.js.map": "/flavorlab/static/js/main.40356e2a.js.map"
+    "main.e43d7911.js.map": "/flavorlab/static/js/main.e43d7911.js.map"
   },
   "entrypoints": [
     "static/css/main.4f38b2c0.css",
-    "static/js/main.40356e2a.js"
+    "static/js/main.e43d7911.js"
   ]
 }
