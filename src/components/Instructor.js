@@ -53,7 +53,6 @@ const Instructors = () => {
                       with a passion for creating unforgettable dining
                       experiences. Bon appétit!
                     </Card.Text>
-                    <Button variant="primary">More Details</Button>
                   </Card.Body>
                 </Card>
               </Col>

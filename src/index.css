@@ -31,12 +31,11 @@ code {
 }
 
 .textColorTitle {
-  color: rgba(255, 255, 255, 0.885);
-  font-size: 50px;
-  font-family: bold;
+  font-size: 36px;
   text-align: center;
   margin-top: 10%;
-  margin-bottom: 2%;
+  margin-bottom: 4%;
+  color: rgb(197, 194, 189);
 }
 
 .instructor{
@@ -59,8 +58,19 @@ code {
 
 .textColor {
   color: rgba(255, 255, 255, 0.885);
-  font-size: 16px;
+  font-size: 19px;
   text-align: center;
-  width: 40%;
+  line-height: 42px;
+  width: 47%;
   margin: 0 auto;
+  color: rgb(145, 213, 144);
 }
+
+
+.alert-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+

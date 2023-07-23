@@ -7,7 +7,6 @@ import Instructors from "./components/Instructor";
 import Services from "./components/Services";
 import Booking from "./components/Booking";
 import About from "./components/About";
-import Navbar2 from "./components/Navbar2";
 
 function App() {
   return (
@@ -15,22 +14,22 @@ function App() {
       <div className="App">
         <div className="content">
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/MealCooked/" element={<Home/>}>
               <Home />
             </Route>
-            <Route path="/meals">
+            <Route path="/MealCooked/meals">
               <Meals />
             </Route>
-            <Route path="/about">
+            <Route path="/MealCooked/about">
               <About />
             </Route>
-            <Route path="/instructors">
+            <Route path="/MealCooked/instructors">
               <Instructors/>
             </Route>
-            <Route path="/services">
+            <Route path="/MealCooked/services">
               <Services/>
             </Route>
-            <Route path="/booking">
+            <Route path="/MealCooked/booking">
               <Booking/>
             </Route>
           </Switch>

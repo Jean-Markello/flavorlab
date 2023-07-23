@@ -1,24 +1,23 @@
+import React, { useState } from "react";
 import Navbar2 from "./Navbar2";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import Dropdown from "react-bootstrap/Dropdown";
-import SplitButton from "react-bootstrap/SplitButton";
-import { useState } from "react";
-import Button from "react-bootstrap/Button";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import { Button } from "react-bootstrap";
 
 const Booking = () => {
   const requireDetails = ["Full Name", "Address", "Phone Number"];
-  const [state, setValue] = useState("");
-  const [price, setPrice] = useState("");
   const serviceType = [
     [
       "Service Type",
       ["One Session", "In-person Cooking", "Online Cooking"],
       "state1",
     ],
+  ];
+
+  const serviceType2 = [
     [
       "Instructor",
       [
@@ -36,18 +35,22 @@ const Booking = () => {
     ],
   ];
 
-  const changeValue = (name, value) => {
-    if (value === "state1") {
-      setValue(name);
-    } else {
-      setValue(name);
-      if (name === "One Session") {
-        setPrice("$50 for 2H");
-      } else if (name === "In-person Cooking") {
-        setPrice("$400 for 5 Month");
-      } else {
-        setPrice("$200 for 2 Month");
-      }
+  const serviceAllType = [serviceType, serviceType2];
+
+  const [selectedService, setSelectedService] = useState("Service Type");
+  const [price, setPrice] = useState("");
+
+  const handleServiceSelect = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedService(selectedValue);
+
+    // Calculate and set the price based on the selected service
+    if (selectedValue === "One Session") {
+      setPrice("$50 for 2H");
+    } else if (selectedValue === "In-person Cooking") {
+      setPrice("$400 for 5 Month");
+    } else if (selectedValue === "Online Cooking") {
+      setPrice("$200 for 2 Month");
     }
   };
 
@@ -59,67 +62,60 @@ const Booking = () => {
     <>
       <div className="booking">
         <Navbar2 />
-        <div style={{ textAlign: "center", width: "98%", marginBottom: "2%" }}>
+        <div style={{ width: "98%", marginBottom: "2%", marginTop: "1%" }}>
           <Row>
             <Col></Col>
             <Col>
               <Card
                 style={{
                   width: "40rem",
-                  textAlign: "center",
-                  backgroundColor: "rgba(6, 86, 143, 0.7)",
+                  backgroundColor: "rgba(6, 86, 143, 1)",
                 }}
               >
                 <Card.Body>
                   {requireDetails.map((details) => (
-                    <InputGroup
-                      className="mb-3"
-                      style={{ marginTop: "5%" }}
-                      key={details}
-                    >
-                      <InputGroup.Text id="basic-addon1">
-                        {details}
-                      </InputGroup.Text>
-                      <Form.Control
-                        placeholder="Enter details"
-                        aria-label="Username"
-                        aria-describedby="basic-addon1"
-                      />
-                    </InputGroup>
+                    <div key={details}>
+                      <label style={{ fontSize: "20px" }}>{details}:</label>
+                      <Form.Floating className="mb-2">
+                        <Form.Control
+                          id="floatingInputCustom"
+                          type="email"
+                          placeholder="name@example.com"
+                        />
+                        <label htmlFor="floatingInputCustom">
+                          {details}
+                        </label>
+                      </Form.Floating>
+                    </div>
+                  ))}{" "}
+                  {serviceAllType.map((serviceType) => (
+                    <>
+                      <label  style={{ fontSize: "20px" }}> {serviceType[0][0]} </label>
+                      <FloatingLabel controlId="floatingSelectGrid" style={{ marginBottom: "4%" }} className="mb-2">
+                        <Form.Select
+                          aria-label="Floating label select example"
+                          onChange={handleServiceSelect}
+                          value={selectedService}
+                        >
+                          {serviceType.map((service) => (
+                            <optgroup>
+                              {service[1].map((value) => (
+                                <option value={value} key={value}>
+                                  {value}
+                                </option>
+                              ))}
+                            </optgroup>
+                          ))}
+                        </Form.Select>
+                      </FloatingLabel>
+                    </>
                   ))}
-                  {serviceType.map((service) => (
-                    <InputGroup
-                      className="mb-3"
-                      style={{ marginTop: "5%" }}
-                      key={service[0]}
-                    >
-                      <SplitButton
-                        variant="outline-secondary"
-                        title={service[0]}
-                        id="segmented-button-dropdown-1"
-                      >
-                        {service[1].map((item) => (
-                          <Dropdown.Item
-                            href="#"
-                            onClick={() => changeValue(item, service[3])}
-                            key={item}
-                          >
-                            {item}
-                          </Dropdown.Item>
-                        ))}
-                      </SplitButton>
-                      <Form.Control
-                        placeholder={state}
-                        aria-label="Text input with dropdown button"
-                      />
-                    </InputGroup>
-                  ))}
-                  <Card.Text>
+                  <Card.Text style={{textAlign: "center" }}>
                     <h5 style={{ color: "orange" }}>Price: {price}</h5>
-                  </Card.Text>
-                  <Button style={{ marginTop: "2%" }} onClick={handleBookClick}>
+                    <Button style={{ marginTop: "2%", backgroundColor: "green", fontSize: "18px"}} onClick={handleBookClick}>
                     Book
                   </Button>
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </Col>
